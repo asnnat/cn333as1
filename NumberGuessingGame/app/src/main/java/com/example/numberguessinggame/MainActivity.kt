@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             NumberGuessingGameTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize()) {
+                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
                     NumberGuessingGameScreen(randomNumber)
                 }
             }
@@ -132,12 +132,14 @@ fun NumberGuessingGameScreen(randomNumber: Int) {
         } else {
             Text(
                 text = stringResource(R.string.success),
+                color = MaterialTheme.colors.surface,
                 modifier = Modifier.align(Alignment.CenterHorizontally),
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
             )
             Text(
                 text = stringResource(R.string.count, count),
+                color = MaterialTheme.colors.surface,
                 modifier = Modifier.align(Alignment.CenterHorizontally),
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
@@ -148,6 +150,8 @@ fun NumberGuessingGameScreen(randomNumber: Int) {
         Button(onClick = {
             count = 0
             canGuess = true
+            inputNumber = ""
+            hint = "Let's Guess"
             randomNumber = nextInt(1, 1000) },
             colors = ButtonDefaults.buttonColors(
                 backgroundColor = MaterialTheme.colors.onBackground,
@@ -191,7 +195,7 @@ fun EditNumberField(
 @Preview(showBackground = true, backgroundColor = 0xFFF0EAE2)
 @Composable
 fun LightThemePreview() {
-    var randomNumber = nextInt(1, 1001)
+    var randomNumber = nextInt(1, 1000)
 
     NumberGuessingGameTheme(darkTheme = false) {
         NumberGuessingGameScreen(randomNumber)
@@ -204,7 +208,7 @@ fun LightThemePreview() {
 @Preview(showBackground = true, backgroundColor = 0x757575)
 @Composable
 fun DarkThemePreview() {
-    var randomNumber = nextInt(1, 1001)
+    var randomNumber = nextInt(1, 1000)
 
     NumberGuessingGameTheme(darkTheme = true) {
         NumberGuessingGameScreen(randomNumber)

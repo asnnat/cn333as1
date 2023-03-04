@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Number Guessing Game</string>
     <string name="header_of_page">I\'m thinking of a number 1 - 1000.\nCan you guess it?</string>
-    <string name="your_guess">Your Guess</string>
+    <string name="your_guess">Guess a number</string>
     <string name="hint">Hint: %s</string>
     <string name="success">Success</string>
     <string name="count">You made %s guesses.</string>

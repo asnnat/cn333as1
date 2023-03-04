@@ -37,3 +37,5 @@ You have to install software before using the project.
 4. Click the **Run button** to build and run the app
 
 ## Preview
+
+[![preview clip](https://img.youtube.com/vi/P_SnVMI-Ti8/0.jpg)](https://www.youtube.com/watch?v=P_SnVMI-Ti8)
